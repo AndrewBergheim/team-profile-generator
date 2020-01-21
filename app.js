@@ -152,41 +152,44 @@ engineerQuestions = [
 
 //inquirer prompt
 let employeePrompt = function(){ inquirer.prompt(defaultQuestion)
-.then(function(response){
-    // question set logic & object creation
-    if (response.profession == "intern"){
-        inquirer.prompt(internQuestions).then(function(res){
-            teamArray.push(new Intern(res.name, res.id, res.email, res.school))
-            if (res.continue == "yes"){
-                employeePrompt()
-            }
-    })}
+    .then(function(response){
+        // question set logic & object creation
+        if (response.profession == "intern"){
+            inquirer.prompt(internQuestions).then(function(res){
+                teamArray.push(new Intern(res.name, res.id, res.email, res.school))
+                //console.log(teamArray)
+                if (res.continue == "yes"){
+                    employeePrompt()
+                }
+        })}
 
-    else if (response.profession == "manager"){
-        inquirer.prompt(managerQuestions).then(function(res){
-            teamArray.push(new Manager(res.name, res.id, res.email, res.officeNumber))
-            if (res.continue == "yes"){
-                employeePrompt()
-            }
-    })}
+        else if (response.profession == "manager"){
+            inquirer.prompt(managerQuestions).then(function(res){
+                teamArray.push(new Manager(res.name, res.id, res.email, res.officeNumber))
+                if (res.continue == "yes"){
+                    employeePrompt()
+                }
+        })}
 
-    else if (response.profession == "engineer"){
-        inquirer.prompt(engineerQuestions).then(function(res){
-            teamArray.push(new Engineer(res.name, res.id, res.email, res.github))
-            if (res.continue == "yes"){
-                employeePrompt()
-            }
-    })}
+        else if (response.profession == "engineer"){
+            inquirer.prompt(engineerQuestions).then(function(res){
+                teamArray.push(new Engineer(res.name, res.id, res.email, res.github))
+                if (res.continue == "yes"){
+                    employeePrompt()
+                }
+        })}
 
-    else{
-        inquirer.prompt(employeeQuestions).then(function(res){
-            teamArray.push(new Employee(res.name, res.id, res.email))
-            if (res.continue == "yes"){
-                employeePrompt()
-            }
-    })}   
-})
+        else{
+            inquirer.prompt(employeeQuestions).then(function(res){
+                teamArray.push(new Employee(res.name, res.id, res.email))
+                if (res.continue == "yes"){
+                    employeePrompt()
+                }
+        })}   
+    })
 }
+
+// CLI to populate team array
 employeePrompt()
 
 //html generation loop
