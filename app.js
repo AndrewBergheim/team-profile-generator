@@ -2,6 +2,8 @@
 const inquirer = require("inquirer")
 const fs = require("fs")
 const classes = require("./lib/classes")
+
+// getting classes from classes.js
 let Employee = classes.employee;
 let Manager = classes.manager;
 let Engineer = classes.engineer;
