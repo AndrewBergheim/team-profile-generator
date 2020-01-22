@@ -340,7 +340,7 @@ let employeePrompt = function(){ inquirer.prompt(defaultQuestion)
     })
 }
 
-// CLI to populate team array
+// intiation function
 employeePrompt()
 
 
