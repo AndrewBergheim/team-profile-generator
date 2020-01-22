@@ -1,0 +1,31 @@
+#header{
+    width: 100%;
+    height: 25%;
+    padding: 20px;
+    text-align: center;
+    background-color: #eb6e34;
+    color: #eeeeee;
+    font-size: 25px;
+}
+
+.card{
+    display: inline-block;
+    width: 200px;
+    padding: 10px;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-bottom: 40px;
+}
+
+.card-head{
+    background-color: #32a895;
+    padding: 5px;
+}
+
+.card-title{
+    color: #ffffff;
+}
+
+.card-wrapper{
+    text-align: center; 
+}
